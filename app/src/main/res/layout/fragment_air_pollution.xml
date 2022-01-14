@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.waldemlav.weatherapp.ui.AirPollutionFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/pollution_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_abbreviation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/air_pollution_abbreviation"
+        android:textColor="@color/black"
+        android:textSize="32sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pollution_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_published_at"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="@string/no_data"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_abbreviation"
+        app:layout_constraintTop_toBottomOf="@+id/tv_abbreviation"
+        tools:text="Published at PM 10:00" />
+
+    <TextView
+        android:id="@+id/tv_aqi_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/no_data"
+        android:textSize="96sp"
+        app:layout_constraintStart_toStartOf="@+id/tv_pm25_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_published_at"
+        tools:text="3"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_aqi_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/no_data"
+        android:textSize="34sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_aqi_value"
+        app:layout_constraintStart_toEndOf="@+id/tv_aqi_value"
+        tools:text="Good"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_pm25_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/no_data"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_pm10_value"
+        app:layout_constraintTop_toTopOf="@+id/tv_pm10_value"
+        tools:text="34.3"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_pm10_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/no_data"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_aqi_value"
+        tools:text="20.9"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_so2_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/no_data"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_pm10_value"
+        app:layout_constraintTop_toTopOf="@+id/tv_pm10_value"
+        tools:text="3.3"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_no2_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="@string/no_data"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/tv_o3_value"
+        app:layout_constraintTop_toTopOf="@+id/tv_o3_value"
+        tools:text="7.0"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_o3_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/no_data"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pm10"
+        tools:text="9.4"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_co_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/no_data"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/tv_o3_value"
+        app:layout_constraintTop_toTopOf="@+id/tv_o3_value"
+        tools:text="0.7"
+        tools:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/tv_pm25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="PM2.5"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pm25_value"
+        app:layout_constraintStart_toStartOf="@+id/tv_pm25_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pm25_value"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_pm10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="PM10"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_pm10_value"
+        app:layout_constraintStart_toStartOf="@+id/tv_pm10_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_pm10_value"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_so2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="SO\u2082"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_so2_value"
+        app:layout_constraintStart_toStartOf="@+id/tv_so2_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_so2_value"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_no2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="NO\u2082"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_no2_value"
+        app:layout_constraintStart_toStartOf="@+id/tv_no2_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no2_value"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_o3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="O\u2083"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_o3_value"
+        app:layout_constraintStart_toStartOf="@+id/tv_o3_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_o3_value"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/tv_co"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="CO"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_co_value"
+        app:layout_constraintStart_toStartOf="@+id/tv_co_value"
+        app:layout_constraintTop_toBottomOf="@+id/tv_co_value"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

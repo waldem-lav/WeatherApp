@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Weather app</string>
+    <string name="city_fragment_text">Manage cities</string>
+    <string name="city_fragment_search_queryhint">Enter location</string>
+    <string name="search_fragment_text">Cancel</string>
+    <string name="weather_no_data_text">No data available</string>
+    <string name="weather_aqi_no_data_text">AQI -</string>
+    <string name="weather_forecast_text">7-day forecast</string>
+    <string name="weather_details_text">More details</string>
+    <string name="air_pollution_abbreviation">Air Quality Index</string>
+    <string name="weather_refresh">Refresh</string>
+    <string name="no_data">--</string>
+    <string name="no_data_2">--/--</string>
+</resources>
