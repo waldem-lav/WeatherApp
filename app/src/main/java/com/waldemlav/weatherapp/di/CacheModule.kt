@@ -5,7 +5,6 @@ import androidx.room.Room
 import com.waldemlav.weatherapp.data.cache.database.CityDatabase
 import com.waldemlav.weatherapp.data.cache.database.CityDao
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
@@ -13,6 +12,7 @@ import javax.inject.Singleton
 import com.waldemlav.weatherapp.data.cache.database.LocalDao
 import com.waldemlav.weatherapp.data.cache.database.LocalDatabase
 import com.waldemlav.weatherapp.data.cache.mappers.WeatherMapper
+import dagger.Provides
 
 @Module
 @InstallIn(SingletonComponent::class)
@@ -55,7 +55,6 @@ object CacheModule {
     }
 
     @Singleton
-    @Provides
     fun provideWeatherMapper(): WeatherMapper {
         return WeatherMapper()
     }

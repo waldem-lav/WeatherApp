@@ -47,13 +47,11 @@ object NetworkModule {
     }
 
     @Singleton
-    @Provides
     fun provideWeatherRemoteDataSource(weatherApi: WeatherApi): WeatherRemoteDataSource {
         return WeatherRemoteDataSource(weatherApi)
     }
 
     @Singleton
-    @Provides
     fun provideAirPollutionRemoteDataSource(
         airPollutionApi: AirPollutionApi
     ): AirPollutionRemoteDataSource {
@@ -61,13 +59,11 @@ object NetworkModule {
     }
 
     @Singleton
-    @Provides
     fun provideWeatherDtoMapper(): WeatherDtoMapper {
         return WeatherDtoMapper()
     }
 
     @Singleton
-    @Provides
     fun provideAirPollutionDtoMapper(): AirPollutionDtoMapper {
         return AirPollutionDtoMapper()
     }

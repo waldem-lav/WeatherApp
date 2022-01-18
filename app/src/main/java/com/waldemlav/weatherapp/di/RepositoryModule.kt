@@ -9,7 +9,6 @@ import com.waldemlav.weatherapp.data.network.WeatherRemoteDataSource
 import com.waldemlav.weatherapp.data.network.mappers.AirPollutionDtoMapper
 import com.waldemlav.weatherapp.data.repository.MainRepository
 import dagger.Module
-import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
@@ -19,7 +18,6 @@ import javax.inject.Singleton
 object RepositoryModule {
 
     @Singleton
-    @Provides
     fun provideMainRepository(
         weatherRemoteDataSource: WeatherRemoteDataSource,
         airPollutionRemoteDataSource: AirPollutionRemoteDataSource,
