@@ -44,12 +44,14 @@ class MainViewModel @Inject constructor(
 
     fun setNewCurrentCity(savedCity: SavedCity) {
         viewModelScope.launch {
-            repository.resetCurrentSavedCity()
-            repository.deleteCachedData()
-            repository.updateSavedCity(savedCity)
-            getCurrentCity()
-            _uiState.update { it.copy(weather = null) }
-            _uiState.update { it.copy(shouldBeUpdated = true) }
+            if (!repository.isSavedCityCurrent(savedCity.id)) {
+                repository.resetCurrentSavedCity()
+                repository.deleteCachedData()
+                repository.updateSavedCity(savedCity)
+                getCurrentCity()
+                _uiState.update { it.copy(weather = null) }
+                _uiState.update { it.copy(shouldBeUpdated = true) }
+            }
         }
     }
 
@@ -101,7 +103,8 @@ class MainViewModel @Inject constructor(
 
     fun deleteSavedCity(savedCity: SavedCity) {
         viewModelScope.launch {
-            repository.deleteSavedCity(savedCity)
+            if (!repository.isSavedCityCurrent(savedCity.id))
+                repository.deleteSavedCity(savedCity)
         }
     }
 

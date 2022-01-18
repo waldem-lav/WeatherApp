@@ -25,6 +25,9 @@ interface LocalDao {
     @Query("SELECT COUNT(*) FROM saved_city WHERE id=:id")
     suspend fun getSavedCitiesCountById(id: Int): Int
 
+    @Query("SELECT COUNT(*) FROM saved_city WHERE id=:id AND is_current = 1")
+    suspend fun getCurrentSavedCitiesCountById(id: Int): Int
+
     @Insert
     suspend fun insertSavedCity(savedCity: SavedCity)
 

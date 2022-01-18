@@ -148,6 +148,12 @@ class MainRepository @Inject constructor(
         }
     }
 
+    suspend fun isSavedCityCurrent(id: Int): Boolean {
+        return withContext(Dispatchers.IO) {
+            localDao.getCurrentSavedCitiesCountById(id) == 1
+        }
+    }
+
     suspend fun getSavedCities(): List<SavedCity> {
         return withContext(Dispatchers.IO) {
             localDao.getSavedCities()

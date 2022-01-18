@@ -31,12 +31,10 @@ class CityListAdapter(
         val current = getItem(position)
         holder.bind(current)
         holder.itemView.findViewById<ImageView>(R.id.iv_delete).setOnClickListener {
-            if (!holder.isCityCurrent())
-                onDeleteBtnPressed(current)
+            onDeleteBtnPressed(current)
         }
         holder.itemView.setOnClickListener {
-            if (!holder.isCityCurrent())
-                onItemClicked(current)
+            onItemClicked(current)
         }
     }
 
@@ -69,8 +67,6 @@ class CityListAdapter(
             else
                 binding.tvCityInfo.text = "${savedCity.name}, ${savedCity.country}"
         }
-
-        fun isCityCurrent(): Boolean = binding.ivIsCurrent.visibility == View.VISIBLE
     }
 
     companion object {
